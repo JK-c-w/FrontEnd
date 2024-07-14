@@ -1,0 +1,49 @@
+html,body{
+    padding: 0%;
+    margin: 0%;
+    width: 100%;
+    height: 100%;
+}
+.main{
+    width: 100%;
+    height: 100%;
+    background-color: blueviolet;
+    position: relative;
+
+}
+.main div{
+    width: 100%;
+    height: 101px;
+    border-bottom-color:lightpink;
+    border-bottom-style:solid ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+div h1{
+    font-size:6vh;
+}
+img{
+    opacity: 0;
+    position: absolute;
+    
+}
+#en1 img{
+    width: 76px;
+    height: 79px;
+    border-radius: 44px;
+}
+#en2 img{
+    border-radius: 44px;
+    width: 82px;
+}
+#en3 img{
+    width: 82px;
+    border-radius: 40px;
+}
+#en4 img{
+    width: 77px;
+    border-radius:52px;
+
+}

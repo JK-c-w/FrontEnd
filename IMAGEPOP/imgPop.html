@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="imgPOP.css">
+
+</head>
+<body>
+    <div id="heading"></div> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var heading=document.querySelector("#heading");
+
+	const throttleFunction=(func, delay)=>{
+	
+	// Previously called time of the function
+	let prev = 0; 
+	return (...args) => {
+		// Current called time of the function
+		let now = new Date().getTime(); 
+	
+		// Logging the difference between previously 
+		// called and current called timings
+		//console.log(now-prev, delay); 
+		
+		// If difference is greater than delay call
+		// the function again.
+		if(now - prev> delay){ 
+		prev = now;
+	
+		// "..." is the spread operator here 
+		// returning the function with the 
+		// array of arguments
+		return func(...args); 
+		}
+	}
+	}
+	heading.addEventListener("mouseover", throttleFunction((dets)=>{
+	     var div=document.createElement("div");
+         div.classList.add("image");
+         div.style.left=dets.x+"px";
+         div.style.top=dets.y+"px";
+         var img=document.createElement("img");
+         img.setAttribute("src","https://tse4.mm.bing.net/th?id=OIP.87rC-vQdkf1I5qv74_2LjwHaHp&pid=Api&P=0&h=180");
+         div.append(img);
+         document.body.appendChild(div);
+         gsap.to('img',{
+            y:"0%",
+            duration:0.4,
+        })
+         setTimeout(function(){
+            gsap.to('img',{
+                y:"100%",
+               duration:0.4,
+            })
+            div.remove();
+         },2000);         
+        
+	},100));
+    </script>
+</body>
+
+</html>

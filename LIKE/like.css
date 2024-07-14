@@ -1,0 +1,37 @@
+html{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+body{
+    height: 100%;
+    width:100%;
+    background-color: thistle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.post{
+    height: 300px;
+    width: 250px;
+    border-radius: 10px;
+    background-color: #fff;
+    position: relative;
+}
+.post #pic{
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+#like{
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    transform: translate(35px, -80px) scale(0);
+    left: 50px;
+    bottom: 30px;
+    transition:  all ease 0.4s;
+    opacity: 0;
+    
+}
